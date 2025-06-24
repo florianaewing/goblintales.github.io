@@ -1,12 +1,26 @@
-body, html {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* full screen height */
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  align-items: center;      /* centers vertically */
+  height: 100vh;            /* full viewport height */
 }
 
 header {
-  margin: 0;
-  padding: 0;
+  flex-shrink: 0;
 }
 
 /* LOGO SECTION */
@@ -52,11 +66,10 @@ header {
   height: auto;
   position: relative;
   margin: auto;
-  padding: 0 10px; /* Optional: slight padding for breathing room */
 }
 
 /* For larger screens (e.g., desktops, tablets) */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .slideshow-container {
     width: 33.33%;
   }
@@ -194,7 +207,7 @@ header {
   font-size: 1em;
   font-family: "Lucida Console", "Courier New", monospace;
   font-weight: 100;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   position: absolute;
   top: 0px;
   left: -100px; /* Position the numbertext at the top left */
