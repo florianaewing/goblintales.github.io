@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goblin Tales</title>
+    <link href="css/styles.css" type="text/css"
+          rel="stylesheet" />
+    <script src="js/scripts.js"></script>
+    
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e) {
+  e.preventDefault();
+});
+    </script>
+
+</head>
+<body>
+<header>
+    <a href="index.html">
+        <img id="logo" src="images/GoblinTables.png" alt="Logo"/>
+
+    </a>
+</header>
+<main>
+
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <img src="images/artwork/imageTester.png" alt="GoblinTales">
+        <div class="text">Title
+            <p></p>
+            <h3></h3>
+        </div>
+
+    </div>
+
+    <div class="mySlides fade">
+        <img src="images/artwork/GoblinTales2.png"  alt="GoblinTales2">
+        <div class="text">Title Two
+            <p></p>
+            <h3></h3>
+        </div>
+    </div>
+
+</div>
+<button class="nav-button first" onclick="goToFirst()">⬅</button>  <!-- leftwards arrow -->
+<button class="nav-button prev" onclick="plusSlides(-1)">❮</button>  <!-- heavy left arrow -->
+<button class="nav-button random" onclick="goToRandom()">🎲</button> <!-- dice -->
+<button class="nav-button next" onclick="plusSlides(1)">❯</button>   <!-- heavy right arrow -->
+<button class="nav-button last" onclick="goToLast()">➡</button>    <!-- rightwards arrow -->
+
+
+</div>
+
+</main>
+</body>
+</html>

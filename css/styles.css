@@ -1,0 +1,222 @@
+/* LOGO SECTION */
+/* Default: show mobile logo, hide desktop */
+#logo-mobile {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#logo-desktop {
+  display: none;
+}
+
+/* On larger screens: hide mobile logo, show desktop */
+@media (min-width: 768px) {
+  #logo-mobile {
+    display: none;
+  }
+
+  #logo-desktop {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+/* SLIDESHOW SECTION */
+/* Slideshow container */
+* {
+  box-sizing: border-box;
+}
+
+.slideshow-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: auto;
+  padding: 0 10px; /* Optional: slight padding for breathing room */
+}
+
+/* For larger screens (e.g., desktops, tablets) */
+@media (min-width: 768px) {
+  .slideshow-container {
+    width: 33.33%;
+  }
+}
+
+/* Center the images in the slider and apply object-fit */
+.mySlides img {
+  display: block;
+  width: 100%; /* Make the image scale with the container's width */
+  height: 100%; /* Make the image scale with the container's height */
+  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  margin: 0 auto;
+}
+
+/* Show the first slide by default */
+.mySlides:first-child {
+  display: block;
+}
+
+.mySlides p {
+  color: black;
+  font-size: 0.8em;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 100;
+}
+
+/* Hide the rest of the slides */
+.mySlides:not(:first-child) {
+  display: none;
+}
+
+/* Shared button styles */
+.nav-button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  padding: 12px 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  user-select: none;
+  z-index: 10;
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
+}
+
+/* Hover state */
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.nav-button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* Mobile Layout */
+.first {
+  left: 10px;
+}
+
+.prev {
+  left: 80px;
+}
+
+.random {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-button.random {
+  font-size: 28px; /* or any size you prefer */
+  line-height: 1;   /* to keep it vertically centered */
+}
+
+@media (min-width: 768px) {
+  .nav-button.random {
+    font-size: 36px;
+  }
+}
+
+.next {
+  right: 80px;
+}
+
+.last {
+  right: 10px;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .first {
+    left: calc((100% - 33.33%) / 2 + 10px);
+  }
+
+  .prev {
+    left: calc((100% - 33.33%) / 2 + 80px);
+  }
+
+  .random {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .next {
+    right: calc((100% - 33.33%) / 2 + 80px);
+  }
+
+  .last {
+    right: calc((100% - 33.33%) / 2 + 10px);
+  }
+}
+
+/* Caption text */
+.text {
+  color: black;
+  font-size: 1.5em;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 100;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 1em;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 100;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0px;
+  left: -100px; /* Position the numbertext at the top left */
+  z-index: 2; /* Ensure it's above the image and not hidden */
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  margin-top: 70px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 0s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* END SLIDESHOW SECTION */
