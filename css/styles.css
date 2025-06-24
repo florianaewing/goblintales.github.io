@@ -39,7 +39,7 @@ header {
   height: auto;
   display: block;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 15px;
   object-fit: contain;
   line-height: 0;
 }
