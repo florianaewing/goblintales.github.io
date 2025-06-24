@@ -1,19 +1,23 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* prevents horizontal scrolling */
+  overflow-x: hidden;
+}
+
+header {
+  margin: 0;
+  padding: 0;
 }
 
 /* LOGO SECTION */
 /* Default: show mobile logo, hide desktop */
 #logo-mobile {
-  width: 100vw;            /* ensures it fits full viewport width */
-  max-width: 360px;        /* cap the size for consistency */
+  width: 100vw;        /* full viewport width */
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
-  object-fit: contain;     /* ensures the image fits nicely inside its box */
-  padding: 0;
+  object-fit: contain;
 }
 
 /* Hide desktop version on mobile */
