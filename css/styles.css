@@ -1,12 +1,16 @@
 /* LOGO SECTION */
 /* Default: show mobile logo, hide desktop */
 #logo-mobile {
-  width: 100%;
-  max-width: 360px;
+  width: 100vw;            /* ensures it fits full viewport width */
+  max-width: 360px;        /* cap the size for consistency */
   height: auto;
   display: block;
+  margin: 0 auto;
+  object-fit: contain;     /* ensures the image fits nicely inside its box */
+  padding: 0;
 }
 
+/* Hide desktop version on mobile */
 #logo-desktop {
   display: none;
 }
@@ -23,9 +27,10 @@
     max-width: 480px;
     height: auto;
     margin: 0 auto;
+    object-fit: contain;
   }
 }
-
+/* END LOGO SECTION */
 /* SLIDESHOW SECTION */
 /* Slideshow container */
 * {
