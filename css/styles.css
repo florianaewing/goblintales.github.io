@@ -45,14 +45,17 @@ header {
     display: none;
   }
 
-  #logo-desktop {
-    display: block;
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    margin: 0 auto;
-    object-fit: contain;
-  }
+ #logo-desktop {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;      /* fixed width to ensure visibility */
+  height: auto;
+  z-index: 9999;      /* very high to stay on top */
+  object-fit: contain;
+  display: block;     /* make sure it’s visible */
+}
 }
 /* END LOGO SECTION */
 /* SLIDESHOW SECTION */
@@ -195,10 +198,12 @@ header {
   font-size: 1.5em;
   font-family: "Lucida Console", "Courier New", monospace;
   font-weight: 100;
-  position: absolute;
-  width: 100%;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 10px; /* or adjust as needed */
+  position: static; /* <- important: remove absolute positioning */
+  padding: 10px 20px;  /* top/bottom 10px, left/right 20px padding */
+
+
 }
 
 /* Number text (1/3 etc) */
