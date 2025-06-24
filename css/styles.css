@@ -40,7 +40,7 @@ header {
 }
 
 /* On larger screens: hide mobile logo, show desktop */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   #logo-mobile {
     display: none;
   }
