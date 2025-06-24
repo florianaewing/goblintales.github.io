@@ -276,4 +276,38 @@ header {
   }
 }
 
-/* END SLIDESHOW SECTION */
+/* ========== FIX FOR MOBILE LOGO-SLIDE GAP ========== */
+@media (max-width: 1023px) {
+  /* Reset margin and padding on header */
+  header {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Reset height, margin, and padding on wrapper */
+  .page-wrapper {
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Override flex alignment and height on main wrapper */
+  .main-wrapper {
+    height: auto !important;           /* natural height */
+    align-items: flex-start !important;   /* align children to top */
+    justify-content: flex-start !important; /* no vertical centering */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove bottom margin and padding on mobile logo */
+  #logo-mobile {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remove margin top on slideshow container */
+  .slideshow-container {
+    margin-top: 0 !important;
+  }
+}
