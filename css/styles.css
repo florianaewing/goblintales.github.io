@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents horizontal scrolling */
+}
+
 /* LOGO SECTION */
 /* Default: show mobile logo, hide desktop */
 #logo-mobile {
