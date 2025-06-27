@@ -29,13 +29,14 @@ header {
   display: flex;
   justify-content: center;
   width: 100%;
-  line-height: 0; /* Prevent vertical gaps from inline elements */
+  line-height: 0; 
+  height: 6vh;
 
 }
 
 .icon-row {
   display: flex;
-  gap: 10%;
+  gap: 20%;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -43,18 +44,22 @@ header {
 }
 
 .icon-row img {
-  width: 30vw; /* good base size */
+  width: 20vw; /* good base size */
   height: auto;
 }
 
 /* On desktop, constrain icon-row to same width as slideshow */
 @media (min-width: 1024px) {
+  .icon-row {
+    width: 33.33%;
+  }
+
   .icon-row a {
   margin: 0;
   padding: 0;
   display: inline-block; /* keep them inline but allow box model */
   line-height: 0;        /* remove line height */
-  }
+}
 
   .icon-row img {
     width: 7vw; /* smaller on desktop to match scale */
