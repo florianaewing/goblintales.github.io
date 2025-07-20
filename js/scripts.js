@@ -30,13 +30,15 @@ function showSlides(n) {
 
 // Go to first slide
 function goToLast() {
-  showSlides(slideIndex = 1);
+  let slides = document.getElementsByClassName("mySlides");
+  showSlides(slideIndex = slides.length);
 }
 
 // Go to last slide
 function goToFirst() {
-  let slides = document.getElementsByClassName("mySlides");
-  showSlides(slideIndex = slides.length);
+  showSlides(slideIndex = 1);
+
+  
 }
 
 // Go to random slide
@@ -45,3 +47,11 @@ function goToRandom() {
   let randomIndex = Math.floor(Math.random() * slides.length) + 1;
   showSlides(slideIndex = randomIndex);
 }
+
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+document.addEventListener('dragstart', function(e) {
+  e.preventDefault();
+});

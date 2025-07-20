@@ -1,15 +1,20 @@
 html, body {
-  height: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;   /* still prevent sideways scroll */
+  overflow-y: auto;     /* allow vertical scroll */
+  background-image: url(images/WEBSITE_sansheader.PNG);
+  background-size: contain; /* ensure the background image covers the entire area */
+  background-repeat: no-repeat; /* prevent the background image from repeating */
+  background-position: center; /* center the background image */
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 96vh; /* full screen height */
+  height: auto; /* full screen height */
 }
 
 .main-wrapper {
@@ -17,21 +22,22 @@ html, body {
   display: flex;
   flex-direction: column;     /* Stack children vertically */
   align-items: center;        /* Center horizontally */
-  justify-content: flex-end;/* Top-align vertically */
-  height: 100vh;
+  justify-content: flex-start;/* Top-align vertically */
+  position: relative; /* Allow absolute positioning of children */
+  min-height: 100vh;   /* Ensure it stretches to the full height of the screen */
+  padding-top: 6%;
+  padding-bottom: 1.5%;  /* Ensure there's room at the bottom for the buttons */
 }
 
 header {
   flex-shrink: 0;
 }
+
 /*ICON LINKS SECTION*/
 .icon-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
-  line-height: 0; 
-  height: 6vh;
-
 }
 
 .icon-row {
@@ -41,22 +47,29 @@ header {
   align-items: center;
   width: 100%;
   max-width: 100%;
+  line-height: 0;
 }
 
-.icon-row img {
-  width: 15vw; /* good base size */
-  height: auto;
-}
+.icon-row h1 a {
+    text-decoration: none;
+    color: black;
+    font-family: "Gabriela", serif;
+
+  }
+
+  .icon-row h1 a:hover {
+    color: rgb(67, 131, 59);
+  }
 
 /* On desktop, constrain icon-row to same width as slideshow */
 @media (min-width: 1024px) {
   .icon-row {
     width: 33.33%;
+    line-height: 0;
   }
 
   .icon-row a {
   margin: 0;
-  padding: 0;
   display: inline-block; /* keep them inline but allow box model */
   line-height: 0;        /* remove line height */
 }
@@ -64,7 +77,15 @@ header {
   .icon-row img {
     width: 7vw; /* smaller on desktop to match scale */
   }
+
+  .icon-row h1 a {
+    text-decoration: none;
+    font-family: "Gabriela", serif;
+
+  }
 }
+
+
 /* END ICON LINKS */
 
 /* LOGO SECTION */
@@ -92,15 +113,15 @@ header {
   }
 
  #logo-desktop {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;      /* fixed width to ensure visibility */
+  max-width: 33.33%; /* fixed width to ensure visibility */
   height: auto;
-  z-index: 9999;      /* very high to stay on top */
-  object-fit: contain;
   display: block;     /* make sure it’s visible */
+  object-fit: contain;
+  z-index: 2;
 }
 }
 /* END LOGO SECTION */
@@ -115,14 +136,18 @@ header {
   width: 100%;
   height: auto;
   position: relative;
-  margin-top:0;
 }
 
 /* For larger screens (e.g., desktops, tablets) */
 @media (min-width: 1024px) {
   .slideshow-container {
-    width: 33.33%;
+    width: 30%;
   }
+}
+
+.mySlides {
+  padding-bottom: 6%; /* matches or slightly exceeds button height */
+  position: relative;   /* required for absolute children to work logically */
 }
 
 /* Center the images in the slider and apply object-fit */
@@ -131,7 +156,7 @@ header {
   width: 100%; /* Make the image scale with the container's width */
   height: auto; /* Make the image scale with the container's height */
   object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
-  margin: 0 auto;
+  margin: -10px auto;
 }
 
 /* Show the first slide by default */
@@ -150,23 +175,35 @@ header {
 .mySlides:not(:first-child) {
   display: none;
 }
+/* END SLIDESHOW SECTION */
 
 /* Shared button styles */
 .nav-button {
-  cursor: pointer;
+  all: unset;
   position: absolute;
-  bottom: 10px;
-  padding: 12px 16px;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.3s ease;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 15%;
+  height: 15%;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-  user-select: none;
-  z-index: 10;
-  text-decoration: none; /* Remove underline */
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  bottom: 1px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+  float:none;
+}
+
+.nav-button img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 /* Hover state */
@@ -175,20 +212,13 @@ header {
   color: white;
 }
 
-.nav-button {
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-
-
 /* Mobile Layout */
 .first {
-  left: 10px;
+  left: 20px;
 }
 
 .prev {
-  left: 80px;
+  left: 120px;
 }
 
 .random {
@@ -196,33 +226,30 @@ header {
   transform: translateX(-50%);
 }
 
-.nav-button.random {
-  font-size: 28px; /* or any size you prefer */
-  line-height: 1;   /* to keep it vertically centered */
-}
 
 @media (min-width: 768px) {
-  .nav-button.random {
-    font-size: 36px;
+  .nav-button {
+    width: 10%;
+    height: 10%;
   }
 }
 
 .next {
-  right: 80px;
+  right: 120px;
 }
 
 .last {
-  right: 10px;
+  right: 20px;
 }
 
 /* Desktop Layout */
 @media (min-width: 768px) {
   .first {
-    left: calc((100% - 33.33%) / 2 + 10px);
+    left: calc((100% - 33.33%) / 2 + 0px);
   }
 
   .prev {
-    left: calc((100% - 33.33%) / 2 + 80px);
+    left: calc((100% - 33.33%) / 2 + 100px);
   }
 
   .random {
@@ -231,30 +258,32 @@ header {
   }
 
   .next {
-    right: calc((100% - 33.33%) / 2 + 80px);
+    right: calc((100% - 33.33%) / 2 + 100px);
   }
 
   .last {
-    right: calc((100% - 33.33%) / 2 + 10px);
+    right: calc((100% - 33.33%) / 2 + 0px);
   }
 }
+
+/* End Shared button styles */
 
 /* Caption text */
 .text {
   color: black;
   font-size: 1.5em;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Gabriela", serif;
   font-weight: 100;
   text-align: center;
   text-decoration: none;
   margin-top: 5px; /* or adjust as needed */
-  position: static; /* <- important: remove absolute positioning */
+  position: relative; /* <- important: remove absolute positioning */
   padding: 5px 5px;  /* top/bottom 10px, left/right 20px padding */
 }
 
 @media (max-width: 1023px) {
   .text {
-    padding: 0px auto;   /* Adds vertical and horizontal padding */
+    padding: 15px auto;   /* Adds vertical and horizontal padding */
     margin: 0px auto;    /* Adds space above/below and centers horizontally */
     box-sizing: border-box; /* Make sure padding doesn’t overflow container */
   }
@@ -265,6 +294,7 @@ header {
   .text h3 {
     margin: 0;
     padding: 0;
+    font-family: "Gabriela", serif;
   }
 }
 
