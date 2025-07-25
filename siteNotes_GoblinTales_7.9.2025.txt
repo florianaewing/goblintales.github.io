@@ -1,13 +1,14 @@
 Globlin Tales Finishing Touches
 
 1. Contact page: form or just links?
+	Links to socials
 
 2. About page: arist statement, or about the arist + pictures
 
 3. Main page: Goblin Tales banner
 
 4. Font choice
-
+	
 5. Purchase domain name
 
 6. Additional functionality?
