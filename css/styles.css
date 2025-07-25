@@ -25,7 +25,6 @@ html, body {
   justify-content: flex-start;/* Top-align vertically */
   position: relative; /* Allow absolute positioning of children */
   min-height: 100vh;   /* Ensure it stretches to the full height of the screen */
-  padding-top: 6%;
   padding-bottom: 1.5%;  /* Ensure there's room at the bottom for the buttons */
 }
 
@@ -83,6 +82,10 @@ header {
     font-family: "Gabriela", serif;
 
   }
+
+  .main-wrapper {
+      padding-top: 6%;
+
 }
 /* END ICON LINKS */
 
@@ -134,6 +137,7 @@ header {
   width: 100%;
   height: auto;
   position: relative;
+  
 }
 
 /* For larger screens (e.g., desktops, tablets) */
@@ -184,7 +188,6 @@ header {
   width: 75px;
   height: 75px;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,15 +291,11 @@ header {
   font-weight: 100;
   text-align: center;
   text-decoration: none;
-  margin-top: 5px; /* or adjust as needed */
   position: relative; /* <- important: remove absolute positioning */
-  padding: 5px 5px;  /* top/bottom 10px, left/right 20px padding */
 }
 
 @media (max-width: 1023px) {
   .text {
-    padding: 15px auto;   /* Adds vertical and horizontal padding */
-    margin: 0px auto;    /* Adds space above/below and centers horizontally */
     box-sizing: border-box; /* Make sure padding doesn’t overflow container */
   }
 
@@ -328,10 +327,7 @@ header {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
-  margin-top: 70px;
   background-color: #bbb;
-  border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
@@ -355,41 +351,7 @@ header {
   }
 }
 
-/* ========== FIX FOR MOBILE LOGO-SLIDE GAP ========== */
-@media (max-width: 1023px) {
-  /* Reset margin and padding on header */
-  header {
-    margin: 0;
-    padding: 0;
-  }
 
-  /* Reset height, margin, and padding on wrapper */
-  .page-wrapper {
-    height: auto;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Override flex alignment and height on main wrapper */
-  .main-wrapper {
-    height: auto !important;           /* natural height */
-    align-items: flex-start !important;   /* align children to top */
-    justify-content: flex-start !important; /* no vertical centering */
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Remove bottom margin and padding on mobile logo */
-  #logo-mobile {
-    margin-bottom: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Remove margin top on slideshow container */
-  .slideshow-container {
-    margin-top: 0 !important;
-  }
-}
 
 /* ========== ABOUT PAGE STYLES ========== */
 
