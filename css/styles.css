@@ -84,8 +84,6 @@ header {
 
   }
 }
-
-
 /* END ICON LINKS */
 
 /* LOGO SECTION */
@@ -156,7 +154,6 @@ header {
   width: 100%; /* Make the image scale with the container's width */
   height: auto; /* Make the image scale with the container's height */
   object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
-  margin: -10px auto;
 }
 
 /* Show the first slide by default */
@@ -652,5 +649,6 @@ header {
   .contact-wrapper p {
     font-size: 1em;
   }
+  
 }
 /* End CONTACT PAGE STYLES */
