@@ -184,8 +184,8 @@ header {
   border: none;
   outline: none;
   box-shadow: none;
-  width: 15%;
-  height: 15%;
+  width: 75px;
+  height: 75px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   display: flex;
@@ -214,11 +214,11 @@ header {
 
 /* Mobile Layout */
 .first {
-  left: 20px;
+  left: -1px;
 }
 
 .prev {
-  left: 120px;
+  left: 100px;
 }
 
 .random {
@@ -226,26 +226,41 @@ header {
   transform: translateX(-50%);
 }
 
-
-@media (min-width: 768px) {
-  .nav-button {
-    width: 10%;
-    height: 10%;
-  }
-}
-
 .next {
-  right: 120px;
+  right: 100px;
 }
 
 .last {
-  right: 20px;
+  right: -1px;
+}
+
+
+@media (min-width: 768px) {
+  .nav-button {
+  all: unset;
+  position: absolute;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 85px;
+  height: 85px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  bottom: 1px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+  float:none;
+}
 }
 
 /* Desktop Layout */
 @media (min-width: 768px) {
   .first {
-    left: calc((100% - 33.33%) / 2 + 0px);
+    left: calc((100% - 33.33%) / 2 + -20px);
   }
 
   .prev {
@@ -262,7 +277,7 @@ header {
   }
 
   .last {
-    right: calc((100% - 33.33%) / 2 + 0px);
+    right: calc((100% - 33.33%) / 2 + -20px);
   }
 }
 
@@ -378,3 +393,264 @@ header {
     margin-top: 0 !important;
   }
 }
+
+/* ========== ABOUT PAGE STYLES ========== */
+
+.about-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdfdf5;
+  background-image: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* About Page Header */
+.about-wrapper header {
+  position: relative;
+  text-align: center;
+  z-index: 1; /* Ensures the header text is above other content */
+}
+
+
+.about-wrapper header h1 {
+  font-size: 2.5em;
+  font-family: "Gabriela", serif;
+  color: black;
+  z-index: 2; /* Ensures h1 is always above other content */
+}
+
+
+/* Main */
+.about-wrapper main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8%; /* slightly narrower padding */
+  margin-top: 0; /* removed excess top margin */
+  background-image: none;
+
+}
+
+.about-wrapper section {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.about-wrapper h2 {
+  font-size: 1.75em;
+  font-family: "Gabriela", serif;
+  color: black;
+}
+
+.about-wrapper p {
+  font-size: 1.05em;
+  font-family: "Gabriela", serif;
+  font-weight: 100;
+  color: black;
+  margin: 0 auto 1.5em; /* reduced bottom spacing */
+}
+
+/* Footer */
+.about-wrapper footer {
+  text-align: center;
+  padding: 1em 0; /* reduced footer padding */
+  font-size: 0.9em;
+  font-family: "Gabriela", serif;
+  font-weight: 100;
+  color: black;
+  margin-top: auto;
+}
+
+/* Image spacing reduced */
+.about-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* LOGO SECTION */
+#about-logo {
+  width: 100vw;        /* full viewport width */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  margin-bottom: auto;
+  object-fit: contain;
+  line-height: 0;
+}
+
+/* On larger screens: hide mobile logo, show desktop */
+@media (min-width: 1024px) {
+
+ #about-logo {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 33.33%; /* fixed width to ensure visibility */
+  height: auto;
+  display: block;     /* make sure it’s visible */
+  object-fit: contain;
+  z-index: 2;
+}
+}
+/* END LOGO SECTION */
+
+/* Responsive Tweaks */
+@media (min-width: 768px) {
+  .about-wrapper header h1 {
+    font-size: 2em;
+    margin-top: 120px;
+  }
+
+  .about-wrapper h2 {
+    font-size: 1.5em;
+  }
+
+  .about-wrapper p {
+    font-size: 1em;
+  }
+
+  .about-wrapper main {
+    padding: 0 5%;
+  }
+}
+
+/* End ABOUT PAGE STYLES */
+
+/* ========== CONTACT PAGE STYLES ========== */
+/* Contact Page Wrapper */
+.contact-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdfdf5;
+  background-image: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+.contact-wrapper header {
+  text-align: center;
+  padding: 2% 2%; /* Reduced padding to keep it compact */
+  margin-bottom: 1em;
+}
+
+.contact-wrapper header h1 {
+  font-size: 2.25em;
+  margin: 0;
+  font-family: "Gabriela", serif;
+  color: black;
+}
+
+/* Main Content */
+.contact-wrapper main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8%; /* Adjusted padding */
+  margin-top: 0;
+}
+
+.contact-wrapper section {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.contact-wrapper h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.5em;
+  font-family: "Gabriela", serif;
+  color: black;
+}
+
+.contact-wrapper p {
+  font-size: 1.05em;
+  line-height: 1.5;
+  font-family: "Gabriela", serif;
+  font-weight: 100;
+  color: black;
+  margin: 0 auto 1.5em;
+}
+
+/* Footer */
+.contact-wrapper footer {
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.9em;
+  font-family: "Gabriela", serif;
+  font-weight: 100;
+  color: black;
+  margin-top: auto;
+}
+
+/* LOGO SECTION */
+#contact-logo {
+  width: 100vw;        /* full viewport width */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  padding: 0;
+  margin-bottom: auto;
+  object-fit: contain;
+  line-height: 0;
+}
+
+/* On larger screens: hide mobile logo, show desktop */
+@media (min-width: 1024px) {
+
+ #contact-logo {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 33.33%; /* fixed width to ensure visibility */
+  height: auto;
+  display: block;     /* make sure it’s visible */
+  object-fit: contain;
+  z-index: 2;
+}
+}
+/* END LOGO SECTION */
+
+.contact-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments for mobile */
+@media (min-width: 768px) {
+  .contact-wrapper main {
+    padding: 0 5%;
+  }
+
+  .contact-wrapper header h1 {
+    font-size: 2em;
+    margin-top: 320px;
+  }
+
+  .contact-wrapper h2 {
+    font-size: 1.5em;
+  }
+
+  .contact-wrapper p {
+    font-size: 1em;
+  }
+}
+/* End CONTACT PAGE STYLES */
