@@ -14,7 +14,6 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: auto; /* full screen height */
 }
 
 .main-wrapper {
@@ -22,14 +21,14 @@ html, body {
   display: flex;
   flex-direction: column;     /* Stack children vertically */
   align-items: center;        /* Center horizontally */
-  justify-content: flex-start;/* Top-align vertically */
   position: relative; /* Allow absolute positioning of children */
-  min-height: 100vh;   /* Ensure it stretches to the full height of the screen */
   padding-bottom: 1.5%;  /* Ensure there's room at the bottom for the buttons */
 }
 
-header {
-  flex-shrink: 0;
+@media (min-width: 1024px) {
+  .main-wrapper {
+    min-height: 100vh; /* Ensure it takes full height on larger screens */
+  }
 }
 
 /*ICON LINKS SECTION*/
@@ -85,7 +84,6 @@ header {
 
   .main-wrapper {
       padding-top: 6%;
-
   }
 }
 /* END ICON LINKS */
@@ -146,6 +144,10 @@ header {
   .slideshow-container {
     width: 30%;
   }
+
+  .mySlides img {
+    margin: -10px auto; /* Adjust margin for larger screens */
+  }
 }
 
 .mySlides {
@@ -158,7 +160,6 @@ header {
   width: 100%; /* Make the image scale with the container's width */
   height: auto; /* Make the image scale with the container's height */
   object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
-  margin: -10px auto;
 }
 
 /* Show the first slide by default */
@@ -351,8 +352,6 @@ header {
     opacity: 1;
   }
 }
-
-
 
 /* ========== ABOUT PAGE STYLES ========== */
 
