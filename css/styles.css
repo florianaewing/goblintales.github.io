@@ -22,7 +22,7 @@ html, body {
   flex-direction: column;     /* Stack children vertically */
   align-items: center;        /* Center horizontally */
   position: relative; /* Allow absolute positioning of children */
-  min-height: 95vh;
+  min-height: 90vh;
 }
 
 @media (min-width: 1024px) {
