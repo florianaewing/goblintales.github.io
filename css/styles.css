@@ -22,7 +22,7 @@ html, body {
   flex-direction: column;     /* Stack children vertically */
   align-items: center;        /* Center horizontally */
   position: relative; /* Allow absolute positioning of children */
-  padding-bottom: 1.5%;  /* Ensure there's room at the bottom for the buttons */
+  min-height: 95vh;
 }
 
 @media (min-width: 1024px) {
