@@ -2,7 +2,7 @@ html, body {
   height: auto;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;   /* still prevent sideways scroll */
+  overflow-x: hidden;   /* prevent sideways scroll */
   overflow-y: auto;     /* allow vertical scroll */
   background-image: url(images/WEBSITE_sansheader.PNG);
   background-size: contain; /* ensure the background image covers the entire area */
@@ -22,7 +22,13 @@ html, body {
   flex-direction: column;     /* Stack children vertically */
   align-items: center;        /* Center horizontally */
   position: relative; /* Allow absolute positioning of children */
-  min-height: 90vh;
+  min-height: 100svh;
+}
+
+@supports not (height: 100svh) {
+  .main-wrapper {
+    min-height: calc(var(--vh, 1vh) * 100); /* fallback for older mobile browsers */
+  }
 }
 
 @media (min-width: 1024px) {
@@ -181,6 +187,12 @@ html, body {
 /* END SLIDESHOW SECTION */
 
 /* Shared button styles */
+
+div#nav-container {
+  height: 75px;
+  display: block;
+}
+
 .nav-button {
   all: unset;
   position: absolute;
@@ -216,11 +228,12 @@ html, body {
 
 /* Mobile Layout */
 .first {
-  left: -1px;
+  left: 0%;
 }
 
 .prev {
-  left: 100px;
+  left: 30%;
+  transform: translateX(-50%);
 }
 
 .random {
@@ -229,12 +242,15 @@ html, body {
 }
 
 .next {
-  right: 100px;
+  left: 70%;
+  transform: translateX(-50%);
 }
 
 .last {
-  right: -1px;
+  left: 100%;
+  transform: translateX(-100%);
 }
+
 
 
 @media (min-width: 768px) {

@@ -1,306 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Goblin Tales</title>
-    <link href="css/styles.css" type="text/css"
-          rel="stylesheet" />
-    <script src="js/scripts.js"></script>
-
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});
-
-document.addEventListener('dragstart', function(e) {
-  e.preventDefault();
-});
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Goblin Tales</title>
+  <link href="css/styles.css" type="text/css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet" />
 </head>
 <body>
-<div class="page-wrapper">
-<main class="main-wrapper">
+  <div class="page-wrapper">
+    <main class="main-wrapper">
 
-<header>
-  <a href="index.html">
-    <img id="logo-mobile" src="images/Bannerplain.png" alt="Goblin Tales Logo Mobile" />
-    <img id="logo-desktop" src="images/Bannerplain.png" alt="Goblin Tales Logo Desktop" />
-  </a>
-</header>
+      <header>
+        <a href="index.html">
+          <img id="logo-mobile" src="images/Bannerplain.png" alt="Goblin Tales Logo Mobile" />
+          <img id="logo-desktop" src="images/Bannerplain.png" alt="Goblin Tales Logo Desktop" />
+        </a>
+      </header>
 
-  <div class="icon-wrapper">
-  <div class="icon-row">
+      <div class="icon-wrapper">
+        <div class="icon-row">
+          <h1><a href="about.html">About</a></h1>
+          <h1><a href="contact.html">Contact</a></h1>
+        </div>
+      </div>
 
-  <h1><a href="about.html">About</a></h1>
-  <h1><a href="contact.html">Contact</a></h1>
-  
+      <div id="slideshow-container" class="slideshow-container"></div>
+
+      <div id="nav-container">
+        <button class="nav-button first" onclick="goToFirst()">
+          <img id="first" src="images/First.png" alt="First slide button" />
+        </button>
+        <button class="nav-button prev" onclick="plusSlides(-1)">
+          <img id="previous" src="images/Previous.png" alt="Previous slide button" />
+        </button>
+        <button class="nav-button random" onclick="goToRandom()">
+          <img id="random" src="images/Random.png" alt="Random slide button" />
+        </button>
+        <button class="nav-button next" onclick="plusSlides(1)">
+          <img id="next" src="images/Next.png" alt="Next slide button" />
+        </button>
+        <button class="nav-button last" onclick="goToLast()">
+          <img id="fresh" src="images/Fresh.png" alt="Last slide button" />
+        </button>
+      </div>
+
+    </main>
   </div>
-  </div>
 
-    <div class="slideshow-container">
-
-    <div class="mySlides fade">
-        <img src="images/artwork/GobFeed1.jpg" alt="GoblinTales">
-        <div class="text">Goblins Discover the Web
-            <p></p>
-            <h3></h3>
-        </div>
-
-    </div>
-    
-    <div class="mySlides fade">
-        <img src="images/artwork/GobFeed2.jpg"  alt="GoblinTales2">
-        <div class="text">Introducing Sir Wansalot
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/GobFeed3.jpg"  alt="GoblinTales2">
-        <div class="text">Snooty's Big Entrance
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed4.jpg"  alt="GoblinTales2">
-        <div class="text">Lazy's Hour
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed5.jpg"  alt="GoblinTales2">
-        <div class="text">Goblin's Parable
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed6.jpg"  alt="GoblinTales2">
-        <div class="text">Break Time
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed7.jpg"  alt="GoblinTales2">
-        <div class="text">Introducing Greedy
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed8.jpg"  alt="GoblinTales2">
-        <div class="text">Goblin Cooking
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed9.jpg"  alt="GoblinTales2">
-        <div class="text">Goblins in Your Area
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed10.jpg"  alt="GoblinTales2">
-        <div class="text">The Great Pie Heist
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed11.jpg"  alt="GoblinTales2">
-        <div class="text">Making Friends
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed12.jpg"  alt="GoblinTales2">
-        <div class="text">The Lazy Model
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed13.jpg"  alt="GoblinTales2">
-        <div class="text">The Gobstellation
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/GobFeed14.jpg"  alt="GoblinTales2">
-        <div class="text">The Hungriest Goblin
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed15.jpg" alt="GoblinTales">
-        <div class="text">Goblin Fishing
-            <p></p>
-            <h3></h3>
-        </div>
-
-    </div>
-    
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed16.jpg"  alt="GoblinTales2">
-        <div class="text">Snooty Noir
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed17.jpg"  alt="GoblinTales2">
-        <div class="text">Coat Full O'Goblins
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed18.jpg"  alt="GoblinTales2">
-        <div class="text">Internal Struggle
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed19.jpg"  alt="GoblinTales2">
-        <div class="text">Entrepreneurial Weather
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed20.jpg"  alt="GoblinTales2">
-        <div class="text">The Sword and the Goblin
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed21.jpg"  alt="GoblinTales2">
-        <div class="text">The Goblin Box
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed22.jpg"  alt="GoblinTales2">
-        <div class="text">Snooty Noir II
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed23.jpg"  alt="GoblinTales2">
-        <div class="text">The Big Biter
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed24.jpg"  alt="GoblinTales2">
-        <div class="text">Dangerous Game
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed25.jpg"  alt="GoblinTales2">
-        <div class="text">Here's Sneaky
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed26.jpg"  alt="GoblinTales2">
-        <div class="text">Honey Harvest 
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed27.jpg"  alt="GoblinTales2">
-        <div class="text">The Future Foretold
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed28.jpg"  alt="GoblinTales2">
-        <div class="text">A Miscommunication
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed29.jpg"  alt="GoblinTales2">
-        <div class="text">Race for the Pie
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed30.jpg"  alt="GoblinTales2">
-        <div class="text">Goblin Freeze
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-    <div class="mySlides fade">
-        <img src="images/artwork/Gobfeed31.jpg"  alt="GoblinTales2">
-        <div class="text">The Goblin and the Frog
-            <p></p>
-            <h3></h3>
-        </div>
-    </div>
-
-</div>
-<button class="nav-button first" onclick="goToFirst()"><img id="first" src="images/First.png" alt="First" /></button>  <!-- leftwards arrow -->
-<button class="nav-button prev" onclick="plusSlides(-1)"><img id="previous" src="images/Previous.png" alt="Previous" /></button>  <!-- heavy left arrow -->
-<button class="nav-button random" onclick="goToRandom()"><img id="random" src="images/Random.png" alt="Random" /></button> <!-- dice -->
-<button class="nav-button next" onclick="plusSlides(1)"><img id="next" src="images/Next.png" alt="Next" /></button>   <!-- heavy right arrow -->
-<button class="nav-button last" onclick="goToLast()"><img id="fresh" src="images/Fresh.png" alt="Fresh" /></button>    <!-- rightwards arrow -->
-</div>
-
-</main>
-</div>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
